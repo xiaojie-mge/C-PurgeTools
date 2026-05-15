@@ -1,20 +1,13 @@
-"""
-C盘清理工具 - 入口
-"""
+﻿"""Compatibility launcher for running from source checkout."""
 import sys
-import os
+from pathlib import Path
 
-# Ensure local modules are importable regardless of working directory
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+ROOT = Path(__file__).resolve().parent
+SRC = ROOT / "src"
+if str(SRC) not in sys.path:
+    sys.path.insert(0, str(SRC))
 
-import tkinter as tk
-from gui import CleanerApp
-
-
-def main() -> None:
-    root = tk.Tk()
-    CleanerApp(root)
-    root.mainloop()
+from c_purge_tools.app import main
 
 
 if __name__ == "__main__":

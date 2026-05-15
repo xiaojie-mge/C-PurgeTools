@@ -1,4 +1,4 @@
-"""
+﻿"""
 Tkinter GUI for the C: disk cleaner.
 """
 import threading
@@ -6,14 +6,14 @@ import tkinter as tk
 from tkinter import messagebox, scrolledtext, ttk
 from typing import Dict, List
 
-from cleaner import DiskCleaner, format_bytes, get_disk_usage, is_admin
-from config import Config
+from .cleaner import DiskCleaner, format_bytes, get_disk_usage, is_admin
+from .config import Config
 
 # ---------------------------------------------------------------------------
 # Constants
 # ---------------------------------------------------------------------------
 
-APP_TITLE   = "C盘清理工具"
+APP_TITLE   = "C-PurgeTools"
 APP_VERSION = "v1.0"
 
 CHECKED   = "☑"
@@ -545,3 +545,4 @@ class CleanerApp:
         self._refresh_disk_info()
         # Automatically re-scan to update sizes
         self._on_scan()
+
